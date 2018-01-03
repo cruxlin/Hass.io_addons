@@ -1,0 +1,26 @@
+{
+  "name": "Reg Git",
+  "version": "1.0",
+  "slug": "reg_git",
+  "description": "Simple git to push/pull the local configuration",
+  "startup": "services",
+  "boot": "manual",
+  "hassio_api": true,
+  "map": ["config:rw","addons:rw","share:rw"],
+  "options": {
+    "repository": null,
+    "auto_restart": false,
+    "repeat": {
+      "active": false,
+      "interval": 300
+    }
+  },
+  "schema": {
+    "repository": "url",
+    "auto_restart": "bool",
+    "repeat": {
+      "active": "bool",
+      "interval": "int"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Regmopidy",
+    "version": "0.2",
+    "slug": "regmopidy",
+    "description": "mopidy music server",
+    "image": "cruxlin/armhf-mymopidy",
+    "url": "https://github.com/bestlibre/hassio-addons/tree/master/mopidy",
+    "startup": "application",
+    "boot": "auto",
+    "options": {"local_scan": true},
+    "schema": {
+	"local_scan": "bool",
+	"options": [{"name": "str", "value": "str"}]
+    },
+    "devices": ["/dev/snd:/dev/snd:rwm"],
+    "ports": {"6680/tcp": 6680, "6600/tcp": 6600},
+    "map": ["share:rw"],
+    "webui": "http://[HOST]:[PORT:6680]"
+}

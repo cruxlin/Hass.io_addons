@@ -1,0 +1,5 @@
+{
+  "build_from" : {
+    "armhf" : "bestlibre/armhf-debian-base:stretch"
+  }
+}

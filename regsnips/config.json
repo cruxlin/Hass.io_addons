@@ -1,0 +1,40 @@
+{
+  "name": "RegSnips.AI",
+  "version": "0.6.5",
+  "slug": "regsnips",
+  "description": "Local voice control platform",
+  "startup": "application",
+  "boot": "auto",
+  "arch": ["armhf", "amd64"],
+  "ports": {
+    "1883/tcp": 9898
+  },
+  "map": ["share:rw"],
+  "devices": ["/dev/snd:/dev/snd:rwm"],
+  "options": {
+    "mqtt_bridge": {
+      "external": true,
+      "host": "192.168.11.92",
+      "port": 1883,
+      "user": "",
+      "password": ""
+    },
+    "disable_audio_asr": false,
+    "mic": "1,0",
+    "speaker": "1,0",
+    "assistant": "assistant.zip"
+  },
+  "schema": {
+    "mqtt_bridge": {
+      "external": "bool",
+      "host": "str",
+      "port": "port",
+      "user": "str",
+      "password": "str"
+    },
+    "disable_audio_asr": "bool",
+    "mic": "str",
+    "speaker": "str",
+    "assistant": "str"
+  }
+}
